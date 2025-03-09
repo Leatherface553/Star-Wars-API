@@ -39,10 +39,10 @@ public class Personajes extends AppCompatActivity {
         adaptador = new PersonajesAdaptador(personajes, this);
         recyclerView.setAdapter(adaptador);
 
-        fetchCharacters();
+        lospersonajes();
     }
 
-    private void fetchCharacters() {
+    private void lospersonajes() {
         String url = "https://swapi.dev/api/people/";
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -52,9 +52,9 @@ public class Personajes extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONArray results = response.getJSONArray("results");
-                            for (int i = 0; i < results.length(); i++) {
-                                JSONObject personajejson = results.getJSONObject(i);
+                            JSONArray resultado = response.getJSONArray("results");
+                            for (int i = 0; i < resultado.length(); i++) {
+                                JSONObject personajejson = resultado.getJSONObject(i);
                                 String nombre = personajejson.getString("name");
                                 String genero = personajejson.getString("gender");
 

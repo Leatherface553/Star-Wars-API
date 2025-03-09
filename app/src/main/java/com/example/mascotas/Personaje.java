@@ -4,9 +4,9 @@ public class Personaje {
     private String nombre;
     private String genero;
 
-    public Personaje(String name, String gender) {
-        this.nombre = name;
-        this.genero = gender;
+    public Personaje(String nombre, String genero) {
+        this.nombre = nombre;
+        this.genero = genero;
     }
 
     public String getNombre() {
